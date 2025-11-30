@@ -22,8 +22,10 @@ A Node.js + Express + MongoDB API for tracking workouts, progress, and fitness a
 ```
 PORT=5000
 MONGO_URI=your_mongo_db_uri
+JWT_SECRET=your_jwt_secret
 ```
 4. Run the server
 
 ## Progress Log
 - Day 1: Project setup, server + DB connection
+- Day 2: Authentication (register, login, JWT, protect middleware)
