@@ -9,8 +9,10 @@ export async function connectDB() {
         await mongoose.connect(process.env.MONGO_URI, clientOptions);
         await mongoose.connection.db.admin().command({ ping: 1 });
         console.log("Successfully connected to MongoDB!");
-    } finally {
+    } catch (err) {
         // Ensures that the client will close when you finish/error
+        console.error("MongoDB connection error: ", err)
         await mongoose.disconnect();
+        process.exit(1)
     }
 }
